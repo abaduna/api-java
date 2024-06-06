@@ -2,23 +2,24 @@ package com.academy.Cusromers.controlers;
 
 
 import com.academy.Cusromers.entites.costumers;
-import com.academy.Cusromers.services.CustomersServiceImp;
+import com.academy.Cusromers.services.CustomerServices;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 
 import java.util.List;
-
+import java.util.Optional;
 
 
 @RestController
 public class CustomerControllers {
     @Autowired
-   private CustomersServiceImp service;
+   private CustomerServices service;
 
     @GetMapping("/customers/{id}")
-    public costumers getCustomers(@PathVariable Integer id){
-       return service.getCustomers(id);
+    public Optional<costumers> getCustomers(@PathVariable Integer id){
+      return service.getCustomers(id);
 
     }
     @GetMapping("/customers")

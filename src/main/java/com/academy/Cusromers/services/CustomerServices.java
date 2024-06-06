@@ -4,10 +4,11 @@ import com.academy.Cusromers.entites.costumers;
 
 
 import java.util.List;
+import java.util.Optional;
 
 public interface CustomerServices {
 
-     costumers getCustomers(Integer id);
+     Optional<costumers> getCustomers(Integer id);
 
       List<costumers> getAllCustomers();
 
