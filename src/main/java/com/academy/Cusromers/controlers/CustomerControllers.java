@@ -13,6 +13,8 @@ import java.util.Optional;
 
 
 @RestController
+@RequestMapping("/api")
+@CrossOrigin(origins = "*")
 public class CustomerControllers {
     @Autowired
    private CustomerServices service;
@@ -41,6 +43,7 @@ public class CustomerControllers {
     }
 
     @GetMapping("/customers/serch")
+    @CrossOrigin(origins = "*")
     public List<costumers>  serchCustomers(@RequestParam(name = "email",required = false) String email){
        return  service.serchCustomers(email);
 
