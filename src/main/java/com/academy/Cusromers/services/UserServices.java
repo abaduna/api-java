@@ -1,27 +1,24 @@
 package com.academy.Cusromers.services;
 
 import com.academy.Cusromers.entites.User;
+import org.springframework.stereotype.Service;
 
 
 import java.util.List;
 import java.util.Optional;
 
+
 public interface UserServices {
 
     Optional<User> getUsers(Integer id);
 
-    List<User> getAllUsers();
+    List<User> getUser();
 
-    void AddCustumers(User users);
+    void AddUser(User users);
 
-    void removeUsers(Integer id);
+    void removeUser(Integer id);
 
-    void update(Integer id,User updateCostumers );
+    void update(Integer id,User updateUser );
 
 
-    List<User>  serchUsers( String email);
-      /*
-      default void hacerAlgo(){
-          System.out.println("Hacer qalgo");
-      }*/
 }

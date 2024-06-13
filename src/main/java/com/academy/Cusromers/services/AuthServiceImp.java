@@ -22,7 +22,7 @@ public class AuthServiceImp implements  AuthService {
                 .toString();
 
 
-        List<User> result = userRepository.findByEmailsAndPassword(email, hashPassword);
+        List<User> result = userRepository.findByEmailOrAddress(email, hashPassword);
         if (result.isEmpty()) {
             return null;
         } else {

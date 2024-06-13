@@ -1,10 +1,20 @@
+let token = localStorage.getItem("Authorization")
 async function init() {
   renderCustomers();
+  
 }
 async function getCustomers() {
   let url = URL_SERVER + "/customers";
 
-  let res = await fetch(url);
+  let res = await fetch(url,{
+    method: "GET", 
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        "Authorization":token
+    }
+   
+});
   let json = await res.json();
 
   return json;
@@ -25,6 +35,11 @@ async function onClickRemove(id) {
 
   let config = {
     method: "DELETE",
+    headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        "Authorization":token
+    }
   };
   await fetch(url, config);
   init();

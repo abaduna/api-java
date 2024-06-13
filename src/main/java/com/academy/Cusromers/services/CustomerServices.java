@@ -20,8 +20,5 @@ public interface CustomerServices {
 
 
       List<costumers>  serchCustomers( String email);
-      /*
-      default void hacerAlgo(){
-          System.out.println("Hacer qalgo");
-      }*/
+      
 }

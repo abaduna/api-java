@@ -16,11 +16,10 @@ import java.util.Optional;
 public interface UserRepositori  extends CrudRepository<User,Integer> {
     Optional<User> findAllById(Integer id);
 
-    @Query("SELECT c FROM User c WHERE c.email LIKE %:email%")
-    List<User> findByEmailOrAddress(@Param("email") String email);
-
     @Query("SELECT c FROM User c WHERE c.email = :email AND c.password = :password")
-    List<User> findByEmailsAndPassword(@Param("email") String email,@Param("password") String password);
+    List<User> findByEmailOrAddress(@Param("email") String email,@Param("password") String password);
+
+
 
 
 }

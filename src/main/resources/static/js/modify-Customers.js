@@ -21,7 +21,12 @@ async function Create(customer) {
           method: "PUT",
           body: JSON.stringify(customer),
           headers: {
-            "Content-Type": "application/json", // Fixed header key from "Headers" to "headers"
+            "Content-Type": "application/json", 
+            headers: {
+              'Accept': 'application/json',
+              'Content-Type': 'application/json',
+              "Authorization": localStorage.setItem("Authorization")
+          }
           },
         };
         await fetch(url, config);
